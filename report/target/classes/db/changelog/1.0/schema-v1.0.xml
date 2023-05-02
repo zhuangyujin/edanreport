@@ -1,0 +1,22 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                   https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.8.xsd">
+    <!--      -->
+
+<!--    <changeSet id="20230428" author="zhuangyujin" >-->
+<!--        <addColumn tableName="user">-->
+<!--            <column name="userpassword" type="varchar(10)" remarks="用户密码"/>-->
+<!--        </addColumn>-->
+<!--    </changeSet>-->
+
+    <!--1.5.6已更新-->
+    <!--<changeSet id="1682311351-2" author="huangjinyuan" >-->
+    <!--    <addColumn tableName="jimu_report_data_source">-->
+    <!--        <column name="type" type="varchar(10)" remarks="类型(report:报表;drag:仪表盘)"/>-->
+    <!--        <column name="type" type="varchar(10)" value="report" />-->
+    <!--    </addColumn>-->
+    <!--</changeSet>-->
+
+</databaseChangeLog>

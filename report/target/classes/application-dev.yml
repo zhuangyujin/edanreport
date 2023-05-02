@@ -1,0 +1,27 @@
+spring:
+  #数据库
+  datasource:
+    url: jdbc:mysql://${MYSQL-HOST:localhost}:${MYSQL-PORT:3306}/${MYSQL-DB:zyjreport}?createDatabaseIfNotExist=true&characterEncoding=UTF-8&useUnicode=true&useSSL=false&tinyInt1isBit=false&allowPublicKeyRetrieval=true&serverTimezone=Asia/Shanghai
+    username: ${MYSQL-USER:root}
+    password: ${MYSQL-PWD:mdjfbzyj515}
+
+jeecg :
+  customPrePath: report
+  # local|minio|alioss
+  uploadType: local
+  # local
+  path :
+    #文件路径
+    upload: ${UPLOAD-PATH:D:\images}
+  # alioss
+  oss:
+    endpoint: XX
+    accessKey: XX
+    secretKey: XX
+    bucketName: report
+  # minio
+  minio:
+    minio_url: http://minio.jeecg.com
+    minio_name: XX
+    minio_pass: XX
+    bucketName: XX

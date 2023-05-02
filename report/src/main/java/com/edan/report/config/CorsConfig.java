@@ -1,0 +1,45 @@
+package com.edan.report.config;
+
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.web.cors.CorsConfiguration;
+import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
+import org.springframework.web.filter.CorsFilter;
+import org.springframework.web.servlet.config.annotation.CorsRegistry;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
+
+
+//@Configuration
+//public class CorsConfig{
+//    @Bean
+//    public CorsFilter corsFilter()
+//    {
+//        CorsConfiguration corsfiguration = new CorsConfiguration();
+//        corsfiguration.addAllowedOriginPattern("*");
+//        corsfiguration.addAllowedHeader("*");
+//        corsfiguration.addAllowedMethod("*");
+//        corsfiguration.setAllowCredentials(true);
+//        UrlBasedCorsConfigurationSource urlBasedCorsConfigurationSource = new UrlBasedCorsConfigurationSource();
+//        urlBasedCorsConfigurationSource.registerCorsConfiguration("/**",corsfiguration);
+//        return new CorsFilter(urlBasedCorsConfigurationSource);
+//    }
+//}
+//两种跨域都跨域解决
+@Configuration
+public class CorsConfig implements WebMvcConfigurer {
+
+    public void addCorsMappings(CorsRegistry registry) {
+        // 设置允许跨域的路径
+        registry.addMapping("/**")
+                // 设置允许跨域请求的域名
+                .allowedOriginPatterns("*")
+                // 是否允许cookie
+                .allowCredentials(true)
+                // 设置允许的请求方式
+                .allowedMethods("GET", "POST", "DELETE", "PUT")
+                // 设置允许的header属性
+                .allowedHeaders("*")
+                // 跨域允许时间
+                .maxAge(3600);
+    }
+}

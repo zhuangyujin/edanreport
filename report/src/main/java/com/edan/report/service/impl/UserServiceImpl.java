@@ -26,8 +26,10 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User>
     @Override
     public R register(User user) {
         //先查看有无注册
-        User userFind = userMapper.selectById(user.getUserId());
-        if (userFind!=null)
+        LambdaQueryWrapper<User> lambdaQueryWrapper = new LambdaQueryWrapper<User>();
+        lambdaQueryWrapper.select(User::getUserName).eq(User::getUserName,user.getUserName());
+        Integer integer = userMapper.selectCount(lambdaQueryWrapper);
+        if (integer>0)
         {
             return  R.error("已注册");
         }
